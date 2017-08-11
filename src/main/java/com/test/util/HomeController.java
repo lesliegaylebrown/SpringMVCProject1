@@ -25,12 +25,19 @@ public class HomeController {
     @RequestMapping("/formhandler")
     public ModelAndView formhandler (
         @RequestParam("name")String name,
-        @RequestParam("email") String email
+        @RequestParam("email") String email,
+        @RequestParam("gender")String gender,
+        @RequestParam("citizen") String citizen,
+        @RequestParam("ssnum") String ssnum,
+        @RequestParam ("favcolor")String favcolor
 
     ){ ModelAndView mv = new ModelAndView("formresponse");
         mv.addObject("name", name);
         mv.addObject("email", email);
-
+        mv.addObject("gender", gender);
+        mv.addObject("citizen", citizen);
+        mv.addObject("ssnum",ssnum);
+        mv.addObject("favcolor",favcolor);
                 return mv;
     }
 }
